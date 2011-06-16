@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  namespace "p", :module => :carpentry do
-    root :to => "prototypes#serve", :file_path => "index"
-    match "/*file_path" => "prototypes#serve"
+  namespace "mockups", :module => :bard_static do
+    root :to => "static#serve", :file_path => "index"
+    match "/*file_path" => "static#serve"
   end
 end

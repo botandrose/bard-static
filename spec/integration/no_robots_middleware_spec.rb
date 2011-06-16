@@ -6,7 +6,7 @@ describe "No robots middleware" do
   end
 
   it "adds the no robots tag to prototypes" do
-    get "/p"
+    get "/mockups"
     response.body.should include(no_robots_tag)
   end
 

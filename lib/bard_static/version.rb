@@ -1,3 +1,3 @@
-module Carpentry
+module BardStatic
   VERSION = "1.0.0"
 end

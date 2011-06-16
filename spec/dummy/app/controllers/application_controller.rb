@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def before_carpentry
+  def before_bard_static
     @notes = "BEFORE CARPENTRY"
   end
 end

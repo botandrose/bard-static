@@ -6,7 +6,7 @@ require "action_view/railtie"
 require "action_mailer/railtie"
 
 Bundler.require
-require "carpentry"
+require "bard_static"
 
 module Dummy
   class Application < Rails::Application
