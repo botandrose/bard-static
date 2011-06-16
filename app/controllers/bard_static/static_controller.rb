@@ -5,7 +5,7 @@ module BardStatic
 
     def serve
       env["bard_static.prototype"] = true
-      render "mockups/#{params[:file_path]}"
+      render "mockups/#{params[:file_path]}", :layout => false
     end
   end
 end
