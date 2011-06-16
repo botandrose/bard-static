@@ -29,11 +29,11 @@ browser at /mockups/path_to_file.
 
 Examples:
 
-| URI Path     | File path                                          |
-|--------------|----------------------------------------------------|
-| /p           | app/views/mockups/index.html.erb      |
-| /p/home      | app/views/mockups/home.html.haml      |
-| /p/posts/new | app/views/mockups/posts/new.html.slim |
+| URI Path           | File path                             |
+|--------------------|---------------------------------------|
+| /mockups           | app/views/mockups/index.html.erb      |
+| /mockups/home      | app/views/mockups/home.html.haml      |
+| /mockups/posts/new | app/views/mockups/posts/new.html.slim |
 
 All available Rails helpers work nicely. Pure prototyping bliss!
 
