@@ -9,7 +9,9 @@ module BardStatic
 
       if env["bard_static.prototype"] && status == 200
         no_robots_tag = %{<meta name="robots" content="noindex, nofollow"/>\n}
-        response.body = response.body.sub("</head>", "#{no_robots_tag}</head>")
+        response.each do |part|
+          part.sub! "</head>", "#{no_robots_tag}</head>"
+        end
       end
 
       [status, headers, response]
