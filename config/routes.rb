@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   namespace "mockups", :module => :bard_static do
-    root :to => "static#serve", :file_path => "index"
-    match "/*file_path" => "static#serve"
+    root :to => "static#mockups", :file_path => "index"
+    match "/*file_path" => "static#mockups"
   end
+  root :to => "static#static", :file_path => "index"
+  match "*view_path" => "static#static"
 end
