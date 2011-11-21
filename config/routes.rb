@@ -3,6 +3,6 @@ Rails.application.routes.draw do
     root :to => "static#mockups", :file_path => "index"
     match "/*file_path" => "static#mockups"
   end
-  root :to => "static#static", :file_path => "index"
-  match "*view_path" => "static#static"
+  root :to => "bard_static/static#static", :file_path => "index"
+  match "*file_path" => "bard_static/static#static"
 end

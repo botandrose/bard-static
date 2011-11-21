@@ -3,7 +3,7 @@ module BardStatic
     before_filter :before_bard_static,
       :if => proc { respond_to?(:before_bard_static, true) }
 
-    def serve
+    def mockups
       env["bard_static.prototype"] = true
       render "mockups/#{params[:file_path]}", :layout => false
     end

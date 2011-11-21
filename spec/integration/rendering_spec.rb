@@ -1,24 +1,28 @@
 require "spec_helper"
 
 describe "Rendering mockups" do
-  it "renders index.html.erb at /mockups" do
+  it "renders index.html.erb at /mockups with no layout" do
     get "/mockups"
-    response.body.should include("INDEX FILE")
+    response.body.should_not include("LAYOUT")
+    response.body.should include("MOCKUP INDEX FILE")
   end
 
-  it "renders sites.html.erb at /mockups/sites" do
+  it "renders sites.html.erb at /mockups/sites with no layout" do
     get "/mockups/sites"
-    response.body.should include("SITES FILE")
+    response.body.should_not include("LAYOUT")
+    response.body.should include("MOCKUP SITES FILE")
   end
 
-  it "renders posts/new.html.erb at /mockups/posts/new" do
+  it "renders posts/new.html.erb at /mockups/posts/new with no layout" do
     get "/mockups/posts/new"
-    response.body.should include("NEW POST FILE")
+    response.body.should_not include("LAYOUT")
+    response.body.should include("MOCKUP NEW POST FILE")
   end
 
-  it "renders partials" do
+  it "renders partials with no layout" do
     get "/mockups/posts/new"
-    response.body.should include("FORM PARTIAL")
+    response.body.should_not include("LAYOUT")
+    response.body.should include("MOCKUP FORM PARTIAL")
   end
 end
 
@@ -38,13 +42,13 @@ describe "Rendering static" do
   it "renders posts/new.html.erb at /posts/new with layout" do
     get "/posts/new"
     response.body.should include("LAYOUT")
-    response.body.should include("NEW POST FILE")
+    response.body.should include("STATIC NEW POST FILE")
   end
 
   it "renders partials with layout" do
     get "/posts/new"
     response.body.should include("LAYOUT")
-    response.body.should include("FORM PARTIAL")
+    response.body.should include("STATIC FORM PARTIAL")
   end
 end
 
