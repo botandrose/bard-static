@@ -5,11 +5,21 @@ module BardStatic
 
     def mockups
       env["bard_static.prototype"] = true
-      render "mockups/#{params[:file_path]}", :layout => false
+      with_404_handler { render "mockups/#{params[:file_path]}", :layout => false }
     end
 
     def static
-      render "static/#{params[:file_path]}"
+      with_404_handler { render "static/#{params[:file_path]}" }
+    end
+
+    private
+
+    def with_404_handler
+      begin
+        yield
+      rescue ActionView::MissingTemplate
+        head 404
+      end
     end
   end
 end

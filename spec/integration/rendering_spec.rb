@@ -24,6 +24,12 @@ describe "Rendering mockups" do
     response.body.should_not include("LAYOUT")
     response.body.should include("MOCKUP FORM PARTIAL")
   end
+
+  it "renders a 404 when path doesn't exist" do
+    get "/mockups/this/is/not/here"
+    response.status.should == 404
+    response.body.should == " "
+  end
 end
 
 describe "Rendering static" do
@@ -49,6 +55,12 @@ describe "Rendering static" do
     get "/posts/new"
     response.body.should include("LAYOUT")
     response.body.should include("STATIC FORM PARTIAL")
+  end
+
+  it "renders a 404 when path doesn't exist" do
+    get "/this/is/not/here"
+    response.status.should == 404
+    response.body.should == " "
   end
 end
 
