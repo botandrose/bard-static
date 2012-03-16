@@ -28,7 +28,7 @@ describe "Rendering mockups" do
   it "renders a 404 when path doesn't exist" do
     get "/mockups/this/is/not/here"
     response.status.should == 404
-    response.body.should == " "
+    response.body.should == "Not Found"
   end
 end
 
@@ -60,7 +60,7 @@ describe "Rendering static" do
   it "renders a 404 when path doesn't exist" do
     get "/this/is/not/here"
     response.status.should == 404
-    response.body.should == " "
+    response.body.should == "Not Found"
   end
 end
 
