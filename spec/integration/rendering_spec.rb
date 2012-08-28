@@ -19,6 +19,12 @@ describe "Rendering mockups" do
     response.body.should include("MOCKUP NEW POST FILE")
   end
 
+  it "renders posts/index.html.erb at /mockups/posts with no layout" do
+    get "/mockups/posts"
+    response.body.should_not include("LAYOUT")
+    response.body.should include("MOCKUP POST INDEX FILE")
+  end
+
   it "renders partials with no layout" do
     get "/mockups/posts/new"
     response.body.should_not include("LAYOUT")
@@ -49,6 +55,12 @@ describe "Rendering static" do
     get "/posts/new"
     response.body.should include("LAYOUT")
     response.body.should include("STATIC NEW POST FILE")
+  end
+
+  it "renders posts/index.html.erb at /posts with layout" do
+    get "/posts"
+    response.body.should include("LAYOUT")
+    response.body.should include("STATIC POST INDEX FILE")
   end
 
   it "renders partials with layout" do
