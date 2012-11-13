@@ -9,7 +9,8 @@ module BardStatic
     end
 
     def static
-      with_404_handler { render_with_index "static/#{params[:file_path]}" }
+      layout = !request.xhr? # render ajax responses with no layout
+      with_404_handler { render_with_index "static/#{params[:file_path]}", :layout => layout }
     end
 
     private
