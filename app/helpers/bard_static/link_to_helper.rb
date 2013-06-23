@@ -9,7 +9,7 @@ module BardStatic
       args.unshift capture(&block) if block_given?
       LinkToCurrent.render(self, *args) do |link|
         link.current_path = request.fullpath
-      end.render
+      end
     end
 
     def link_to_nav(*args, &block)
