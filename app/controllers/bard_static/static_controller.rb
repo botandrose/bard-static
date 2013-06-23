@@ -26,10 +26,10 @@ module BardStatic
     def render_with_index path, options = {}
       begin
         options = options.dup # render is destructive to the options hash!
-        options = options.merge(:partial => path)
+        options = options.merge(:template => path)
         render options
       rescue ActionView::MissingTemplate
-        options[:partial] = "#{path}/index"
+        options[:template] = "#{path}/index"
         render options
       end
     end
