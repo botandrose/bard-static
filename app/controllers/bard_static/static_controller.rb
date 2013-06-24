@@ -5,15 +5,23 @@ module BardStatic
 
     def mockups
       env["bard_static.prototype"] = true
-      render_with_index "mockups/#{params[:file_path]}", :layout => false
+      with_404_handler { render_with_index "mockups/#{params[:file_path]}", :layout => false }
     end
 
     def static
       layout = !request.xhr? # render ajax responses with no layout
-      render_with_index "static/#{params[:file_path]}", :layout => layout
+      with_404_handler { render_with_index "static/#{params[:file_path]}", :layout => layout }
     end
 
     private
+
+    def with_404_handler
+      begin
+        yield
+      rescue ActionView::MissingTemplate
+        render :text => "Not Found", :status => 404
+      end
+    end
 
     def render_with_index path, options = {}
       begin
