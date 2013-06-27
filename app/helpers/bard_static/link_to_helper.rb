@@ -77,13 +77,13 @@ module BardStatic
       end
 
       def current_condition
-        html_options.delete(:if) || url == current_path
+        html_options.delete(:if) || current_path == url
       end
     end
 
     class LinkToNav < LinkToCurrent
       def current_condition
-        super || url.starts_with?(current_path)
+        super || current_path.starts_with?(url)
       end
     end
   end
