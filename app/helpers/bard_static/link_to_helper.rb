@@ -32,7 +32,7 @@ module BardStatic
         @context = context
         @name         = name
         @options      = options || {}
-        @html_options = html_options
+        @html_options = HashWithIndifferentAccess.new(html_options)
         @html_options = @context.send(:convert_options_to_data_attributes, @options, @html_options)
         yield self if block_given?
       end
