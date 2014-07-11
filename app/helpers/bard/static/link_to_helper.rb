@@ -1,10 +1,11 @@
 module Bard
   module Static
     module LinkToHelper
-      def link_to(*args, &block)
-        args.unshift capture(&block) if block_given?
-        LinkTo.render(self, *args)
-      end
+      # Don't enable by default, because its a performance regression. :(
+      # def link_to(*args, &block)
+      #   args.unshift capture(&block) if block_given?
+      #   LinkTo.render(self, *args)
+      # end
 
       def link_to_current(*args, &block)
         args.unshift capture(&block) if block_given?
