@@ -1,6 +1,8 @@
 module Bard
   module Static
     class StaticController < ApplicationController
+      skip_before_action :verify_authenticity_token
+
       before_filter :before_bard_static,
         :if => proc { respond_to?(:before_bard_static, true) }
 
