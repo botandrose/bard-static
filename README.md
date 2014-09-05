@@ -1,12 +1,12 @@
 Forked from kiskolabs/carpentry to change paths
 
-BardStatic
+Bard::Static
 =========
 
-     _____________________________________
-    / BardStatic – handcrafted prototypes \
-    \ with ease                           /
-     -------------------------------------
+     _______________________________________
+    / Bard::Static – handcrafted prototypes \
+    \ with ease                             /
+     ---------------------------------------
           \   ^__^
            \  (oo)\_______
               (__)\       )\/\
@@ -19,15 +19,26 @@ Installation
 
 Add BardStatic to Gemfile:
 
-    gem "bard_static"
+    gem "bard-static"
 
 Usage
 -----
 
-Put your views in app/views/mockups and view them in 
-browser at /mockups/path_to_file.
+Two view directories are exposed: static and mockups.
 
-Examples:
+Static: pages in this view path are intended for production,
+and are rendered with the application layout.
+
+| URI Path           | File path                             |
+|--------------------|---------------------------------------|
+| /                  | app/views/static/index.html.erb       |
+| /home              | app/views/static/home.html.haml       |
+| /posts/new         | app/views/static/posts/new.html.slim  |
+
+Mockups: pages in this view path are intended for prototyping,
+and are rendered with no layout at all. However, you can use the
+`layout` block helper in the template to render within a layout,
+if you like.
 
 | URI Path           | File path                             |
 |--------------------|---------------------------------------|
