@@ -7,7 +7,7 @@ module Bard
         :if => proc { respond_to?(:before_bard_static, true) }
 
       def mockups
-        env["bard_static.prototype"] = true
+        request.env["bard_static.prototype"] = true
         with_404_handler { render_with_index "mockups/#{params[:file_path]}", :layout => false }
       end
 
