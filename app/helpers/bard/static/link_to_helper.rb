@@ -56,7 +56,11 @@ module Bard
         end
 
         def tag_options 
-          context.send(:tag_options, html_options)
+          if context.respond_to?(:tag_builder, true) # Rails 5.1+
+            context.send(:tag_builder).tag_options(html_options)
+          else
+            context.send(:tag_options, html_options)
+          end
         end
 
         def body
