@@ -4,7 +4,7 @@ module Bard
   module Static
     module MockupHelper
       def layout layout, &block
-        render :text => capture(&block), :layout => "layouts/#{layout}"
+        render html: capture(&block), layout: "layouts/#{layout}"
       end
 
       def mockup_form_for &block
