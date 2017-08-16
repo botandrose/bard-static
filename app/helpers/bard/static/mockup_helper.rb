@@ -8,7 +8,7 @@ module Bard
       end
 
       def mockup_form_for &block
-        form_for MockupModel.new, url: ".", &block
+        fields_for MockupModel.new, &block
       end
 
       class MockupModel < OpenStruct
