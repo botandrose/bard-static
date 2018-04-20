@@ -2,7 +2,6 @@
 ENV["RAILS_ENV"] = "test"
 
 require File.expand_path("../dummy/config/environment.rb",  __FILE__)
-require "rails/test_help"
 require "rspec/rails"
 
 ActionMailer::Base.delivery_method = :test
@@ -12,7 +11,7 @@ ActionMailer::Base.default_url_options[:host] = "test.com"
 Rails.backtrace_cleaner.remove_silencers!
 
 # Configure capybara for integration testing
-require "capybara/rails"
+require 'capybara/rspec'
 Capybara.default_driver   = :rack_test
 Capybara.default_selector = :css
 
@@ -27,4 +26,7 @@ RSpec.configure do |config|
 
   # == Mock Framework
   config.mock_with :rspec
+
+  config.filter_run :focus
+  config.run_all_when_everything_filtered = true
 end

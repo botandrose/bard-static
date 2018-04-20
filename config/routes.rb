@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   end
   root to: "bard/static/static#static", file_path: "index", as: "bard_static_default_root"
   get "*file_path" => "bard/static/static#static", constraints: ->(request){
-    lookup_context = ActionView::Base.new("app/views/static").lookup_context
+    lookup_context = ActionView::Base.new(Rails.root.join("app/views/static")).lookup_context
     lookup_context.exists?(request.path) || lookup_context.exists?(request.path + "/index")
   }
 end
