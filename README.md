@@ -48,15 +48,12 @@ if you like.
 
 All available Rails helpers work nicely. Pure prototyping bliss!
 
+Helpers
+-------
 
-Hooks
------
-
-BardStatic let's you add a `#before_bard_static` method in 
-`ApplicationController`, that will be run before any prototype. You can 
-use it, for example, to provide authentication or prevent prototypes 
-from being rendered in production.
-
+`mockup_form_for`: create a dummy form using rails form helpers
+`link_to_current`: adds a `current` class if the current url matches the link
+`link_to_nav`: same as `link_to_current` but also matches if the current url is a child of the link
 
 Gotchas
 -------
@@ -64,3 +61,4 @@ Gotchas
 When rendering a partial, you must specify the full path
 (e.g. `mockups/posts/form`) unless the partial is in 
 `app/views/mockups/`.
+
