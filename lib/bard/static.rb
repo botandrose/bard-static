@@ -1,4 +1,5 @@
 require "bard/static/no_robots_middleware"
+require_relative "../../app/helpers/bard/static/mockup_helper"
 
 module Bard
   module Static
