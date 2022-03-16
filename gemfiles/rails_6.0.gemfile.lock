@@ -168,7 +168,7 @@ PLATFORMS
 DEPENDENCIES
   appraisal
   byebug
-  capybara (~> 3.35.0)
+  capybara
   rails (~> 6.0.0)
   rake
   rspec-rails
