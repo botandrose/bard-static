@@ -14,7 +14,7 @@ Bard::Static
                   ||     ||
 
 
-[![Build Status](https://travis-ci.org/botandrose/bard-static.svg?branch=master)](https://travis-ci.org/botandrose/bard-static)
+[![CI Status](https://github.com/botandrose/bard-static/workflows/CI/badge.svg?branch=master)](https://github.com/botandrose/bard-static/actions?query=workflow%3ACI+branch%3Amaster)
 [![Code Climate](https://codeclimate.com/github/botandrose/bard-static/badges/gpa.svg)](https://codeclimate.com/github/botandrose/bard-static)
 
 Installation
