@@ -73,7 +73,7 @@ module Bard
 
         def add_class class_name
           html_options[:class] ||= ""
-          html_options[:class] << " #{class_name}"
+          html_options[:class] += " #{class_name}"
           html_options[:class].strip!
         end
 
