@@ -32,9 +32,9 @@ describe "Rendering mockups", type: :feature do
   end
 
   it "renders a 404 when path doesn't exist" do
-    expect {
-      visit "/mockups/this/is/not/here"
-    }.to raise_error(ActionView::MissingTemplate)
+    visit "/mockups/this/is/not/here"
+    expect(page.status_code).to eq(404)
+    expect(page.body).to include("Not Found")
   end
 end
 
@@ -70,9 +70,8 @@ describe "Rendering static", type: :feature do
   end
 
   it "renders a 404 when path doesn't exist" do
-    expect {
-      visit "/this/is/not/here"
-    }.to raise_error(ActionController::RoutingError)
+    visit "/this/is/not/here"
+    expect(page.status_code).to eq(404)
   end
 end
 

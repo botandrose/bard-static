@@ -17,7 +17,7 @@ module Bard
         begin
           yield
         rescue ActionView::MissingTemplate
-          render text: "Not Found", status: 404
+          render plain: "Not Found", status: 404
         end
       end
 
